@@ -1,0 +1,15 @@
+(select first_name, phone from customers)
+UNION
+(select contact_name, phone from suppliers);
+
+(select city, country from customers)
+UNION ALL
+(select city, country from suppliers);
+
+(select city, country from customers WHERE country = 'USA' OR country = 'Brazil')
+UNION
+(select city, country from suppliers WHERE country = 'USA' OR country = 'Brazil');
+
+(select customer_id, total_amount from company_orders)
+UNION
+(select id, 0 from customers);
